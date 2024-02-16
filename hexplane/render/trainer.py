@@ -403,7 +403,7 @@ class Trainer:
                 for i in range(3):
                     temporal_loss += model.compute_plane_smoothness_loss(model.density_line_time[i].squeeze(0))
                     temporal_loss += model.compute_plane_smoothness_loss(model.app_line_time[i].squeeze(0))
-                total_loss = total_loss + (temporal_loss)*0.001
+                total_loss = total_loss + (temporal_loss)*0.1
                 summary_writer.add_scalar("train/temporal_loss", temporal_loss.detach().item(), global_step=iteration)
 
 
