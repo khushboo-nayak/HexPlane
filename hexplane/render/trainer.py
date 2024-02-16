@@ -396,7 +396,7 @@ class Trainer:
                 summary_writer.add_scalar(
                     "train/dist_loss", dist_loss.detach().item(), global_step=iteration
                 )
-            use_temporal_loss = False
+            use_temporal_loss = True
             if use_temporal_loss :
                 temporal_loss = 0.0
 
